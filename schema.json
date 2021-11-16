@@ -1,0 +1,108 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "auti",
+    "description": "polje auta",
+    "examples": [
+        [
+            {
+                "naziv": "BMW Z4 (G29) M40i",
+                "marka": "BMW",
+                "model": "Z4",
+                "gorivo": "benzin",
+                "godinaproizvodnje": "2018",
+                "snagamotora": "340hp",
+                "maxbrzina": "329 km/h",
+                "masa": "1695kg",
+                "potrosnjagoriva": "13.3 l/100km",
+                "mjenjac": "automatik"
+            }
+        ]
+    ],
+    "properties": {
+        "naziv": {
+            "type": "string",
+            "description": "naziv automobila.",
+            "examples": [
+                "BMW Z4 (G29) M40i"
+            ]
+        },
+        "marka": {
+            "type": "string",
+            "description": "marka automobila",
+            "examples": [
+                "BMW"
+            ]
+        },
+        "model": {
+            "type": "string",
+            "description": "model automobila",
+            "examples": [
+                "Z4"
+            ]
+        },
+        "gorivo": {
+            "type": "string",
+            "description": " tip goriva koje automobil koristi(ili električni)",
+            "examples": [
+                "benzin"
+            ]
+        },
+        "godinaproizvodnje": {
+            "type": "string",
+            "description": "godina u kojoj je auto proizveden",
+            "examples": [
+                "2018"
+            ]
+        },
+        "snagamotora": {
+            "type": "string",
+            "description": "snaga motora u hp",
+            "examples": [
+                "340hp"
+            ]
+        },
+        "maxbrzina": {
+            "type": "string",
+            "description": "najveca brzina koju auto moze postici, u km/h",
+            "examples": [
+                "329 km/h"
+            ]
+        },
+        "masa": {
+            "type": "string",
+            "description": "masa automobila, u kg",
+            "examples": [
+                "1695kg"
+            ]
+        },
+        "potrosnjagoriva": {
+            "type": "string",
+            "description": "koliko litara goriva auto potroši na 100km ili koliko struje ",
+            "examples": [
+                "13.3 l/100km"
+            ]
+        },
+        "mjenjac": {
+            "type": "string",
+            "description": "vrsta mjenjaca, automatik ili manual",
+            "examples": [
+                "automatik"
+            ]
+        }
+    },
+    "required": [
+        "naziv",
+        "marka",
+        "model",
+        "gorivo",
+        "godinaproizvodnje",
+        "snagamotora",
+        "maxbrzina",
+        "masa",
+        "potrosnjagoriva",
+        "mjenjac"
+    ] 
+}
+    
