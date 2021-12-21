@@ -1,0 +1,212 @@
+[
+    {
+        "naziv": "BMW Z4 (G29) M40i",
+        "marka": "BMW",
+        "model": "Z4",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2018",
+        "snagamotora": "340hp",
+        "maxbrzina": "329 km/h",
+        "masa": "1695kg",
+        "potrosnjagoriva": "13.3 l/100km",
+        "mjenjac": "automatik",
+        "auto_id": 1,
+        "images": [
+            {
+                "auto_id": 1,
+                "image": "bmw-zseries-z4-highlights-stage-sp-xxl.jpg"
+            },
+            {
+                "auto_id": 1,
+                "image": "dÄHLer-BMW-Z4-M40i-G29-Chiptuning-CCD1-Felgen-Bodykit-Header.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Ferrari 812 Competizione",
+        "marka": "Ferrari",
+        "model": "812",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2021",
+        "snagamotora": "830hp",
+        "maxbrzina": "340km/h",
+        "masa": "1487kg",
+        "potrosnjagoriva": "17 l/100km",
+        "mjenjac": "automatik",
+        "auto_id": 2,
+        "images": [
+            {
+                "auto_id": 2,
+                "image": "Ferrari 812 Competizione screens.jpg"
+            },
+            {
+                "auto_id": 2,
+                "image": "Poverty-Spec-Ferrari-812-Competizione-1.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Lamborghini Huracan STO",
+        "marka": "Lamborghini",
+        "model": "Huracan",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2020",
+        "snagamotora": "640hp",
+        "maxbrzina": "310km/h",
+        "masa": "1339kg",
+        "potrosnjagoriva": "15.7 l/100km",
+        "mjenjac": "automatik",
+        "auto_id": 3,
+        "images": [
+            {
+                "auto_id": 3,
+                "image": "Lamborghini-Huracan-STO-1.jpg"
+            },
+            {
+                "auto_id": 3,
+                "image": "Lamborghini Huracan STO 2021 review-5.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Mercedes-Benz X-class",
+        "marka": "Mercedes-Benz",
+        "model": "X-class",
+        "gorivo": "dizel",
+        "godinaproizvodnje": "2020",
+        "snagamotora": "190hp",
+        "maxbrzina": "180km/h",
+        "masa": "2251kg",
+        "potrosnjagoriva": "7.7 l/100km",
+        "mjenjac": "manual",
+        "auto_id": 4,
+        "images": [
+            {
+                "auto_id": 4,
+                "image": "mercedes-x-class-off-road-urban-by-carlex-design.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Tesla Model X",
+        "marka": "Tesla",
+        "model": "Model X",
+        "gorivo": "električni",
+        "godinaproizvodnje": "2021",
+        "snagamotora": "1020hp",
+        "maxbrzina": "262km/h ",
+        "masa": "2445kg",
+        "potrosnjagoriva": "20.8 kWh/100km",
+        "mjenjac": "automatik",
+        "auto_id": 5,
+        "images": [
+            {
+                "auto_id": 5,
+                "image": "2021-tesla-model-x.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Rimac Nevera",
+        "marka": "Rimac",
+        "model": "Nevera",
+        "gorivo": "električni",
+        "godinaproizvodnje": "2021",
+        "snagamotora": "1914hp",
+        "maxbrzina": "412km/h ",
+        "masa": "2150kg",
+        "potrosnjagoriva": "21.8 kWh/100km",
+        "mjenjac": "automatik",
+        "auto_id": 6,
+        "images": [
+            {
+                "auto_id": 6,
+                "image": "intro_slider_07_optimised.jpg"
+            },
+            {
+                "auto_id": 6,
+                "image": "The-figures-of-the-new-Rimac-Nevera.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Ford Focus IV Active Wagon",
+        "marka": "Ford",
+        "model": "Focus",
+        "gorivo": "dizel",
+        "godinaproizvodnje": "2021",
+        "snagamotora": "150hp",
+        "maxbrzina": "208km/h ",
+        "masa": "1458kg",
+        "potrosnjagoriva": "4.5 l/100km",
+        "mjenjac": "manual",
+        "auto_id": 7,
+        "images": [
+            {
+                "auto_id": 7,
+                "image": "Ford-Focus-Active-Wagon-1.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Ford Fiesta VIII",
+        "marka": "Ford",
+        "model": "Fiesta",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2021",
+        "snagamotora": "200hp",
+        "maxbrzina": "230km/h ",
+        "masa": "1205 kg",
+        "potrosnjagoriva": "6.7 l/100km",
+        "mjenjac": "manual",
+        "auto_id": 8,
+        "images": [
+            {
+                "auto_id": 8,
+                "image": "Ford-Fiesta-VIII-Mk8-facelift-2022.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Porsche 718 Spyder",
+        "marka": "Porsche",
+        "model": "718",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2020",
+        "snagamotora": "420hp",
+        "maxbrzina": "300km/h ",
+        "masa": "1450kg",
+        "potrosnjagoriva": "10.2 l/100km",
+        "mjenjac": "automatik",
+        "auto_id": 9,
+        "images": [
+            {
+                "auto_id": 9,
+                "image": "rp_-_porsche_718_boxster_spyder-19_0.jpg"
+            },
+            {
+                "auto_id": 9,
+                "image": "rp_-_gt4-6.jpg"
+            }
+        ]
+    },
+    {
+        "naziv": "Ferrari 812 GTS",
+        "marka": "Ferrari",
+        "model": "812",
+        "gorivo": "benzin",
+        "godinaproizvodnje": "2019",
+        "snagamotora": "800hp",
+        "maxbrzina": "340km/h ",
+        "masa": "1450kg",
+        "potrosnjagoriva": "16.4 l/100km",
+        "mjenjac": "automatik",
+        "auto_id": 10,
+        "images": [
+            {
+                "auto_id": 10,
+                "image": "ferrari-812-gts-1.jpg"
+            }
+        ]
+    }
+]

@@ -1,0 +1,71 @@
+
+<html>
+<head>
+
+  <script  src = "./main.js"></script>
+  <link rel="stylesheet" href="./main.css">
+
+  <title>Data Table</title>
+
+</head>
+<body>
+
+<h1>Data Table</h1>
+
+</br>
+</br>
+
+<table id = "table">
+  <tr style= "font-size: 20px; background-color:steelblue; ">
+    <th>naziv</th>
+    <th>marka</th>
+    <th>model</th>
+    <th>gorivo</th>
+    <th>godinaproizvodnje</th>
+    <th>snagaMotora</th>
+    <th>maxBrzina</th>
+    <th>masa</th>
+    <th>potrosnjaGoriva</th>
+    <th>mjenjac</th>
+    <th>slike</th>
+  </tr>
+ 
+</table>
+
+</br>
+</br>
+
+<form id="searchform" action="javascript:obrazac()" method="get" name="searchform">
+    <div id="pretraga">
+        <label for="vrijednost">Polje za pretragu: </label>
+        <input type="text" name="name" id="value" required> Unesite vrijednost
+      </div>
+    <select id = "select" required>
+        <option selected value="" disabled selected>Odaberite polje za pretragu
+        </option>
+        <option value="svi">Sva polja</option>
+        <option value="naziv">naziv</option>
+        <option value="marka">marka</option>
+        <option value="model">model</option>
+        <option value="gorivo">gorivo</option>
+        <option value="godinaproizvodnje">godinaProizvodnje</option>
+        <option value="snagamotora">snagaMotora</option>
+        <option value="masa">masa</option>
+        <option value="potrosnjagoriva">potrosnjaGoriva</option>
+        <option value="mjenjac">mjenjac</option>
+      </select>
+    <input type="submit" id="searchbutton" value="Filtriraj" />
+ </form>
+
+</br>
+</br>
+<button  onclick="generate()"> 
+  restart
+</button>
+
+</br>
+</br>
+
+</body>
+
+</html>

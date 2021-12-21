@@ -1,0 +1,219 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "skup_automobila",
+        "version": "1.3",
+        "info" :"skup automobila",
+        "contact": { 
+            "marko.dukin@fer.hr"
+        },
+        "licence":{
+            "Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)"
+        }
+    },
+    "paths": {
+        "/auti" : {
+            "get": {
+                "summary" : "get all of the resources in dataset",
+                "description" : "returns all the resources",
+                 "produces": ["application/json"],
+                 "parameters": [],
+                 "responses": {
+                     "200": {
+                        "description": "Fetch successfull"
+                     }
+                 }
+            }
+        },
+        "/auti{id}":{
+            "get":{
+                "summary" : "get resource from collection by ID",
+                "description" :"returns a single resource",
+                "parameters": [
+                    {"name": "id",
+                      "in" : "path",
+                      "description":"id of the resource",
+                      "required" : true,
+                      "type" : "integer",
+                      "format" : "int64"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Fetch successfull"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    },
+                    "404": {
+                        "description": "resource not found"
+                    }
+                    
+                }
+            }
+        },
+        "/auti/marka/{marka}":{
+            "get":{
+                "summary" : "get resources from collection by the name of the brand",
+                "description" :"returns all resources with the given brand",
+                "parameters": [
+                    {"name": "marka",
+                      "in" : "path",
+                      "description":"name of the brand",
+                      "required" : true,
+                      "type" : "string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Fetch successfull"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    },
+                    "404": {
+                        "description": "resources not found"
+                    }
+                    
+                }
+            }
+        },
+        "/auti/godina/{godina}":{
+            "get":{
+                "summary" : "get resources from collection by the car year",
+                "description" :"returns all resources with the given year",
+                "parameters": [
+                    {"name": "godina",
+                      "in" : "path",
+                      "description":"year of production",
+                      "required" : true,
+                      "type" : "string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Fetch successfull"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    },
+                    "404": {
+                        "description": "resources not found"
+                    }
+                    
+                }
+            }
+        },
+        "/auti/slike":{
+            "get":{
+                "summary" : "get all the image resources",
+                "description" :"returns all the images",
+                "parameters": [
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Fetch successfull"
+                    }
+                    
+                }
+            }
+        },
+        "/openapi":{
+            "get":{
+                "summary" : "gets the openapi specification",
+                "description" :"returns the openapi file",
+                "parameters": [
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Fetch successfull"
+                    }
+                    
+                }
+            }
+        },
+        "/auti/insert":{
+            "post":{
+                "summary" : "creates a new resource",
+                "description" :"creates a new resource using req.body data",
+                "parameters": [
+                    {"name": "data",
+                      "in" : "body",
+                      "description":"car data",
+                      "required" : true,
+                      "type" : "object"
+                    }
+                ],
+                "responses":{
+                    "201":{
+                        "description":"created a new resource"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    }
+
+                    
+                }
+            }
+        },
+        "/auti/delete{id}":{
+            "post":{
+                "summary" : "deletes a resource using an id",
+                "description" :"deletes a resource",
+                "parameters": [
+                    {"name": "id",
+                      "in" : "path",
+                      "description":"id of the resource",
+                      "required" : true,
+                      "type" : "integer"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"succesfully deleted resource"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    },
+                    "404":{
+                        "description": "didn't find the resource"
+                    }
+                    
+                }
+            }
+        },
+        "/auti/update/{id}":{
+            "put":{
+                "summary" : "updates a resource using an id and data in body",
+                "description" :"updates a resource",
+                "parameters": [
+                    {"name": "id",
+                        "in" : "path",
+                        "description":"id of the resource",
+                        "required" : true,
+                        "type" : "integer"
+                    },
+                    {"name": "data",
+                      "in" : "body",
+                      "description":"data to be updated",
+                      "required" : true,
+                      "type" : "object"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"succesfully updated resource"
+                    },
+                    "400":{
+                        "description": "bad imput by the user"
+                    },
+                    "204":{
+                        "description": "there is no resource to be updated"
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+}
