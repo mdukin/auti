@@ -6,7 +6,8 @@ var db = require('../db');
 
 
 router.get('/auti', async function(req, res, next) {
-    let auti =  (await db.query("SELECT * FROM auti")).rows;
+
+    auti =  (await db.query("SELECT * FROM auti")).rows;
     let slike = (await db.query("SELECT * FROM slike")).rows;
 
     let odgovor = {};
@@ -18,12 +19,19 @@ router.get('/auti', async function(req, res, next) {
         for(let slika of slike){
             if(slika.auto_id == auto.auto_id){
                 auto.images.push(slika);
-            }      
+            }       
         }
 
     auto.links = links(auto.auto_id);
     }
-   
+
+    odgovor["@context"] = {
+        "resurs" : "https://schema.org/Car", 
+        "maxspeed": "https://schema.org/speed",
+        "marka" : "https://schema.org/Brand",
+        "image" :"https://schema.org/image"
+    }
+    
     odgovor.response = auti;
     res.status(200).contentType('application/json').send(odgovor);
     
@@ -51,6 +59,13 @@ router.get('/auti/:id', async function(req, res, next) {
        
         odgovor.status = "OK";
         odgovor.message = "fetched the car with id: " + id;
+
+        odgovor["@context"] = {
+            "resurs" : "https://schema.org/Car", 
+            "maxspeed": "https://schema.org/speed",
+            "marka" : "https://schema.org/Brand",
+            "image" :"https://schema.org/image"
+        }
 
         auto.images = [];
         for(let slika of slike){
@@ -104,6 +119,13 @@ router.get('/auti/marka/:id', async function(req, res, next) {
             auto.links = links(auto.auto_id);
         }
 
+        odgovor["@context"] = {
+            "resurs" : "https://schema.org/Car", 
+            "maxspeed": "https://schema.org/speed",
+            "marka" : "https://schema.org/Brand",
+            "image" :"https://schema.org/image"
+        }
+
         odgovor.response = auti;
         res.status(200).contentType('application/json').send(odgovor);
     }
@@ -146,7 +168,14 @@ router.get('/auti/godina/:id', async function(req, res, next) {
             }      
             auto.links = links(auto.auto_id);
         }
-       
+        
+        odgovor["@context"] = {
+            "resurs" : "https://schema.org/Car", 
+            "maxspeed": "https://schema.org/speed",
+            "marka" : "https://schema.org/Brand",
+            "image" :"https://schema.org/image"
+        }
+
         odgovor.response = auti;
         res.status(200).contentType('application/json').send(odgovor);
         }
@@ -156,7 +185,7 @@ router.get('/auti/godina/:id', async function(req, res, next) {
 });
 
 router.get('/slike', async function(req, res, next){
-    let slike = (await db.query("SELECT * FROM slike")).rows;
+    let slike = (await db.query("SELECT * FROM slike order by auto_id")).rows;
 
     let odgovor = {};
     odgovor.status = "OK";
@@ -193,26 +222,38 @@ router.post('/auti/insert', async function(req,res,next) {
             auto.mjenjac
         ],
     );
-
-    for(let slika  of auto.slike){
-        await db.query(`INSERT INTO slike
-        (image, auto_id)
-       VALUES ($1, $2)`,
-        [
-           slika,
-           auto.auto_id,
-       ],
-    );
-    }
     
   
-        auto =  (await db.query(`SELECT * FROM auti 
+        let id =  (await db.query(`SELECT auto_id FROM auti 
                         WHERE naziv =  $1`,
                     [auto.naziv],  )).rows[0];
+
+                    if(auto.images != undefined){
+                        for(let slika  of auto.images){
+                            await db.query(`INSERT INTO slike
+                            (image, auto_id)
+                           VALUES ($1, $2)`,
+                            [
+                               slika,
+                               id,
+                           ],
+                        );
+                        }
+                    }
 
         let odgovor = {};
         odgovor.status = "Created";
         odgovor.message = "created new car";
+
+        auto.auto_id = id;
+
+        let slike = (await db.query(`SELECT * FROM slike`)).rows;
+        auto.images = [];
+        for(let slika of slike){
+            if(slika.auto_id == auto.auto_id){
+                auto.images.push(slika)
+            }
+        }
        
         auto.links = links(auto.auto_id);
         odgovor.created = auto ;
@@ -223,7 +264,7 @@ router.post('/auti/insert', async function(req,res,next) {
     }
 
 });
-
+ 
 
 router.delete('/auti/delete/:id', async function(req,res,next) {
     let idd =  req.params.id ;
@@ -232,18 +273,21 @@ router.delete('/auti/delete/:id', async function(req,res,next) {
         if(!Number.isInteger(parseInt(idd))) throw error;
 
         let id = parseInt(idd);
+
+        (await db.query(`DELETE FROM slike 
+        WHERE auto_id =  $1`,
+        [id],  ));
  
-        let rez =  (await db.query(`DELETE FROM auti 
+        let rez = (await db.query(`DELETE FROM auti 
                         WHERE auto_id =  $1`,
                         [id],  ));
+            
+        console.log(id , rez.rowCount)
         
         if(rez.rowCount == 0){
             error(res, 404, "Not Found", "Failed to delete, car doesn't exist")
         } 
         else{
-            (await db.query(`DELETE FROM slike 
-                        WHERE auto_id =  $1`,
-                        [id],  ));
 
             let odgovor = {};
             odgovor.status = "OK";
@@ -270,20 +314,24 @@ router.put('/auti/update/:id', async function(req,res,next){
     let idd =  req.params.id ;
     try {
 
-        if(!Number.isInteger(parseInt(idd))) throw error;
+        if(!Number.isInteger(parseInt(idd))){ throw error};
 
-        let auto = req.body;
         let id = parseInt(idd);
 
         let car = ( await db.query(`SELECT * FROM auti WHERE auto_id = $1`,
                           [id],  )).rows[0];
+
        
         if(car === undefined){
             error(res, 204, "No Content", "Didn't update, car doesn't exist");
         }
+       
         else{
+           
+        let auto = req.body;
+
           if(auto.naziv == null) {  auto.naziv = car.naziv };
-          if(auto.marka == null) {  auto.marka =  car.marka };
+          if(auto.marka == undefined) {  auto.marka =  car.marka };
           if(auto.model == null)  { auto.model = car.model };
           if(auto.gorivo == null)  { auto.gorivo = car.gorivo }
           if(auto.godinaproizvodnje == null) {  auto.godinaproizvodnje =  car.godinaproizvodnje};
@@ -291,8 +339,10 @@ router.put('/auti/update/:id', async function(req,res,next){
           if(auto.maxbrzina == null)  { auto.maxbrzina =  car.maxbrzina };
           if(auto.masa == null)  { auto.masa =   car.masa };
           if(auto.potrosnjagoriva == null) {  auto.potrosnjagoriva = car.potrosnjagoriva };
-          if(auto.mjenjac == null)  { auto.mjenjac =   car.mjenjac };
+          if(auto.mjenjac == null)  { auto.mjenjac =  car.mjenjac };
+          if(auto.images == null)  { auto.images =  car.images };
 
+          
             await db.query(`UPDATE auti SET 
                           (naziv, marka, model, gorivo, godinaproizvodnje, snagamotora,maxbrzina,
                               masa,potrosnjagoriva,mjenjac) =
@@ -309,14 +359,30 @@ router.put('/auti/update/:id', async function(req,res,next){
                                 auto.potrosnjagoriva,
                                 auto.mjenjac,
                                 id
-                            ], );                      
+                            ], );  
             
+            console.log(auto + "\n" + auto.images)
+            if(auto.images){
+                for(let slika of auto.images){
+                    await db.query(`INSERT INTO SLIKE VALUES($1, $2)`, 
+                    [slika,
+                    car.auto_id])
+                }
+            }
         let odgovor = {};
         odgovor.status = "OK";
         odgovor.message = "updated the car with the id: " + id;
        
-        let auto = ( await db.query(`SELECT * FROM auti WHERE auto_id = $1`,
+        auto = ( await db.query(`SELECT * FROM auti WHERE auto_id = $1`,
                                     [id],  )).rows[0];
+        
+        let slike = (await db.query("SELECT * FROM slike ")).rows;
+        auto.images = [];
+        for(let slika of slike){
+            if(slika.auto_id == auto.auto_id){
+                auto.images.push(slika)
+            }
+        }
         auto.links = links(auto.auto_id);
         odgovor.response = auto;
 
@@ -325,10 +391,10 @@ router.put('/auti/update/:id', async function(req,res,next){
         }
            
     } catch (err) {
-        error(res, 400 ,"Bad Request", "failed to update, invalid: " +idd);
+        error(res, 400 ,"Bad Request", "failed to update " + err);
     }
 });
-
+ 
 router.use('/', async function(req, res, next) {
 
     if(req.method == "GET")

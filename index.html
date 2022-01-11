@@ -47,15 +47,69 @@
     
 </br>
 
-<a href = "/datatable">Datatable</a>
+<h3><a href = "/datatable">Datatable</a></h3>
+
+<h3><a href = "/api/openapi">API</a></h3>
 
 </br>
 </br>
 
-<a href = "assets/auti.csv" download="">auti.csv</a>
+<h3><a href = "assets/auti.csv" download="">auti.csv</a></h3>
+
+<h3><a href = "assets/auti.json" download="">auti.json</a></h3>
+
+<br>
+
+<h2 id = "prijavljen"> </h2>
+<h3 id = "login_profile">
+    <a  href = "/prijava" id = "login" >Prijava</a>
+</h3>
 
 </br>
-<a href = "assets/auti.json" download="">auti.json</a>
+</br>
 
 </body>
 </html>
+
+<script>   
+
+    prijavi();
+ 
+    async function prijavi(){
+
+        var response = await fetch("prijavljen.json");
+        var json = await response.json();
+        let prijavljenText = document.getElementById("prijavljen");
+        let login = document.getElementById("login");
+        if(json.prijavljen == "true"){
+           
+            prijavljenText.innerText = "Prijavljeni ste";
+            login.remove();
+             let profile  = document.createElement('a');
+             profile.href = "/profile";
+             profile.innerText = "Korisnički profil"
+             let odjava  = document.createElement('a');
+             odjava.href = "/odjava";
+             odjava.innerText = "Odjava"
+             let osvjezi  = document.createElement('a');
+             osvjezi.href = "/osvjezi";
+             osvjezi.innerText = "Osvježi preslike"
+             let pravaOdjava  = document.createElement('a');
+             pravaOdjava.href = "/pravaOdjava";
+             pravaOdjava.innerText = "Odjava iz Auth"
+            let login_profile_div = document.getElementById("login_profile");
+            login_profile_div.append(profile);
+            login_profile_div.append(document.createElement('br'))
+            login_profile_div.append(osvjezi);
+            login_profile_div.append(document.createElement('br'))
+            login_profile_div.append(odjava);
+            login_profile_div.append(document.createElement('br'))
+            login_profile_div.append(pravaOdjava);
+
+        }
+        else{
+            prijavljenText.innerText = "Niste prijavljeni"
+        }
+    }
+</script>
+

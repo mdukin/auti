@@ -1,11 +1,11 @@
-naziv,marka,model,gorivo,godinaproizvodnje,snagamotora,maxbrzina,masa,potrosnjagoriva,mjenjac,auto_id,images
-BMW Z4 (G29) M40i,BMW,Z4,benzin,2018,340hp,329 km/h,1695kg,13.3 l/100km,automatik,1,bmw-zseries-z4-highlights-stage-sp-xxl.jpg ; dÄHLer-BMW-Z4-M40i-G29-Chiptuning-CCD1-Felgen-Bodykit-Header.jpg
-Ferrari 812 Competizione,Ferrari,812,benzin,2021,830hp,340km/h,1487kg,17 l/100km,automatik,2,Ferrari 812 Competizione screens.jpg ; Poverty-Spec-Ferrari-812-Competizione-1.jpg
-Lamborghini Huracan STO,Lamborghini,Huracan,benzin,2020,640hp,310km/h,1339kg,15.7 l/100km,automatik,3,Lamborghini-Huracan-STO-1.jpg ; Lamborghini Huracan STO 2021 review-5.jpg
-Mercedes-Benz X-class,Mercedes-Benz,X-class,dizel,2020,190hp,180km/h,2251kg,7.7 l/100km,manual,4,mercedes-x-class-off-road-urban-by-carlex-design.jpg
-Tesla Model X,Tesla,Model X,električni,2021,1020hp,262km/h ,2445kg,20.8 kWh/100km,automatik,5,2021-tesla-model-x.jpg
-Rimac Nevera,Rimac,Nevera,električni,2021,1914hp,412km/h ,2150kg,21.8 kWh/100km,automatik,6,intro_slider_07_optimised.jpg ; The-figures-of-the-new-Rimac-Nevera.jpg
-Ford Focus IV Active Wagon,Ford,Focus,dizel,2021,150hp,208km/h ,1458kg,4.5 l/100km,manual,7,Ford-Focus-Active-Wagon-1.jpg
-Ford Fiesta VIII,Ford,Fiesta,benzin,2021,200hp,230km/h ,1205 kg,6.7 l/100km,manual,8,Ford-Fiesta-VIII-Mk8-facelift-2022.jpg
-Porsche 718 Spyder,Porsche,718,benzin,2020,420hp,300km/h ,1450kg,10.2 l/100km,automatik,9,rp_-_porsche_718_boxster_spyder-19_0.jpg ; rp_-_gt4-6.jpg
-Ferrari 812 GTS,Ferrari,812,benzin,2019,800hp,340km/h ,1450kg,16.4 l/100km,automatik,10,ferrari-812-gts-1.jpg
+naziv,marka,model,gorivo,godinaproizvodnje,snagamotora,maxbrzina,masa,potrosnjagoriva,mjenjac,id,slike
+BMW Z4 (G29) M40i,BMW,Z4,benzin,2018,340hp,329 km/h,1695kg,13.3 l/100km,automatik,1, https://www.bmw.hr/content/dam/bmw/common/all-models/m-series/bmw-z4-m40i/2021/highlights/bmw-z4-m40i-roadster-gallery-image-design-04_890.jpg,https://www.mad4wheels.com/img/free-car-images/mobile/17194/bmw-z4-g29-m40i-uk-version-2019-540087.jpg
+Ferrari 812 Competizione,Ferrari,812,benzin,2021,830hp,340km/h,1487kg,17 l/100km,automatik,2, https://rollingsteel.it/wp-content/uploads/2021/05/Ferrari-812_Competizione_screenshot-1.jpg,https://www.thesupercarblog.com/wp-content/uploads/2021/05/Poverty-Spec-Ferrari-812-Competizione-1.jpg
+Lamborghini Huracan STO,Lamborghini,Huracan,benzin,2020,640hp,310km/h,1339kg,15.7 l/100km,automatik,3, https://cdn.motor1.com/images/mgl/vRbpq/s1/4x3/lamborghini-huracan-sto.webp,https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1632415640/autoexpress/2021/09/Lamborghini%20Huracan%20STO%202021%20review-5.jpg
+Mercedes-Benz X-class,Mercedes-Benz,X-class,dizel,2020,190hp,180km/h,2251kg,7.7 l/100km,manual,4, https://cdn.motor1.com/images/mgl/qvN8g/s1/mercedes-x-class-off-road-urban-by-carlex-design.jpg
+Tesla Model X,Tesla,Model X,električni,2021,1020hp,262km/h ,2445kg,20.8 kWh/100km,automatik,5, https://cdn.motor1.com/images/mgl/jzgzl/s3/2021-tesla-model-x.jpg
+Rimac Nevera,Rimac,Nevera,električni,2021,1914hp,412km/h ,2150kg,21.8 kWh/100km,automatik,6, https://web-cdn.rimac-automobili.com/wp-content/uploads/2021/05/31101405/intro_slider_07_optimised.jpg,https://www.byri.net/wp-content/uploads/2021/06/The-figures-of-the-new-Rimac-Nevera.jpg
+Ford Focus IV Active Wagon,Ford,Focus,dizel,2021,150hp,208km/h ,1458kg,4.5 l/100km,manual,7, https://automania.hr/wp-content/uploads/2018/11/Ford-Focus-Active-Wagon-1.jpg
+Ford Fiesta VIII,Ford,Fiesta,benzin,2021,200hp,230km/h ,1205 kg,6.7 l/100km,manual,8, https://www.auto-data.net/images/f64/Ford-Fiesta-VIII-Mk8-facelift-2022.jpg
+Porsche 718 Spyder,Porsche,718,benzin,2020,420hp,300km/h ,1450kg,10.2 l/100km,automatik,9, https://www.topgear.com/sites/default/files/cars-car/image/2019/11/rp_-_porsche_718_boxster_spyder-19_0.jpg,https://tarantas.news/uploads/images/2020/06/24/Cayman_GT4_006.jpg
+Ferrari 812 GTS,Ferrari,812,benzin,2019,800hp,340km/h ,1450kg,16.4 l/100km,automatik,10, https://www.automobili.ba/wp-content/uploads/2019/09/ferrari-812-gts-1.jpg

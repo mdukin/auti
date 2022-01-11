@@ -157,7 +157,7 @@
             }
         },
         "/auti/delete{id}":{
-            "post":{
+            "delete":{
                 "summary" : "deletes a resource using an id",
                 "description" :"deletes a resource",
                 "parameters": [
